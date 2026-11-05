@@ -12,7 +12,7 @@ metadata:
 
   labels:
     scenarios.ai.sap.com/id: "faith-supplier-intelligence-t01"
-    ai.sap.com/version: "1.0"
+    ai.sap.com/version: "1.0.1"
 
 spec:
   imagePullSecrets:
