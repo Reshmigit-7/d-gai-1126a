@@ -32,7 +32,7 @@ spec:
           ai.sap.com/resourcePlan: starter
 
       container:
-        image: docker.io/raajgk77/faith-delivery-delay:day4-v1
+        image: docker.io/raajgk77/gai1126a-delivery-delay:day4-v1
 
         command:
           - python
