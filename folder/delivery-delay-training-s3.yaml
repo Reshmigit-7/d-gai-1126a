@@ -12,7 +12,7 @@ metadata:
     artifacts.ai.sap.com/model.kind: "model"
   labels:
     scenarios.ai.sap.com/id: "faith-supplier-intelligence-t01"
-    ai.sap.com/version: "1.1.1"
+    ai.sap.com/version: "1.1.2"
 
 spec:
   imagePullSecrets:
@@ -30,7 +30,7 @@ spec:
       inputs:
         artifacts:
           - name: dataset
-            path: /app/data
+            path: /app/data/mock_deliveries.csv
 
       outputs:
         artifacts:
