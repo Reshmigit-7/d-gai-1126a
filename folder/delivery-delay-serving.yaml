@@ -1,0 +1,47 @@
+apiVersion: ai.sap.com/v1alpha1
+kind: ServingTemplate
+
+metadata:
+  name: faith-delivery-delay-serve-t01
+  annotations:
+    scenarios.ai.sap.com/name: "FAITH Supplier Intelligence T01"
+    scenarios.ai.sap.com/description: "Supplier delivery delay prediction"
+    executables.ai.sap.com/name: "Delivery Delay Prediction API"
+    executables.ai.sap.com/description: "Serve the trained delivery delay model"
+  labels:
+    scenarios.ai.sap.com/id: "faith-supplier-intelligence-t01"
+    ai.sap.com/version: "1.1"
+
+spec:
+  inputs:
+    artifacts:
+      - name: model
+
+  template:
+    apiVersion: serving.kserve.io/v1beta1
+
+    metadata:
+      labels: |
+        ai.sap.com/resourcePlan: starter
+
+    spec: |
+      predictor:
+        imagePullSecrets:
+          - name: faith-docker-t01
+
+        minReplicas: 1
+        maxReplicas: 1
+
+        containers:
+          - name: kserve-container
+            image: docker.io/raajgk77/faith-delivery-delay:day5-serve-v1
+
+            ports:
+              - containerPort: 9001
+                protocol: TCP
+
+            env:
+              - name: STORAGE_URI
+                value: "{{inputs.artifacts.model}}"
+              - name: MODEL_DIR
+                value: /mnt/models
