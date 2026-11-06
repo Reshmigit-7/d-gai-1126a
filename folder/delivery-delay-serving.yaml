@@ -6,7 +6,7 @@ metadata:
   annotations:
     scenarios.ai.sap.com/name: "FAITH Supplier Intelligence T01"
     scenarios.ai.sap.com/description: "Supplier delivery delay prediction"
-    executables.ai.sap.com/name: "Delivery Delay Prediction API"
+    executables.ai.sap.com/name: "delivery-delay-prediction-api"
     executables.ai.sap.com/description: "Serve the trained delivery delay model"
   labels:
     scenarios.ai.sap.com/id: "faith-supplier-intelligence-t01"
