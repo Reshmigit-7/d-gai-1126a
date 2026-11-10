@@ -2,15 +2,15 @@ apiVersion: ai.sap.com/v1alpha1
 kind: ServingTemplate
 
 metadata:
-  name: faith-delivery-delay-serve-t01
+  name: rgnservefaith-delivery-delay-serve-t01
   annotations:
-    scenarios.ai.sap.com/name: "FAITH Supplier Intelligence T01"
-    scenarios.ai.sap.com/description: "Supplier delivery delay prediction"
-    executables.ai.sap.com/name: "delivery-delay-prediction-api"
-    executables.ai.sap.com/description: "Serve the trained delivery delay model"
+    scenarios.ai.sap.com/name: "rgnserveFAITH Supplier Intelligence T01"
+    scenarios.ai.sap.com/description: "rgnserveSupplier delivery delay prediction"
+    executables.ai.sap.com/name: "rgnservedelivery-delay-prediction-api"
+    executables.ai.sap.com/description: "rgnserve the trained delivery delay model"
   labels:
-    scenarios.ai.sap.com/id: "faith-supplier-intelligence-t01"
-    ai.sap.com/version: "1.1"
+    scenarios.ai.sap.com/id: "rgnservefaith-supplier-intelligence-t01"
+    ai.sap.com/version: "1.0"
 
 spec:
   inputs:
@@ -27,7 +27,7 @@ spec:
     spec: |
       predictor:
         imagePullSecrets:
-          - name: faith-docker-t01
+          - name: gai1126a-rgn
 
         minReplicas: 1
         maxReplicas: 1
